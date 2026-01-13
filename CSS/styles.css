@@ -6,6 +6,9 @@
  *** Tutoriel pour utiliser les variables
  *** https://blankthemerpg.forumactif.com/t139-utiliser-les-variables-css ***/
 
+
+
+
 /* VARIABLE MODO CLARO */
 :root {
   color-scheme: light;
@@ -36,6 +39,7 @@
   --title-size: 22px;
 
   --font: "Open Sans";
+  --background: url('https://pikmina.github.io/Blank-Theme/imgs/back.jpg');
 }
 
 /* VARIABLES MODO OSCURO */
@@ -77,6 +81,7 @@
 /* FOND DU FORUM ---*/
 body {
   background: var(--neutralDark);
+  background-image: var(--background);
   font-family: var(--font);
   font-size: var(--normal-size);
   color: var(--textColor);
