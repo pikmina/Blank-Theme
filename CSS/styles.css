@@ -6,7 +6,7 @@
  *** Tutoriel pour utiliser les variables
  *** https://blankthemerpg.forumactif.com/t139-utiliser-les-variables-css ***/
 
-/* VARIABLE DU MODE DE BASE (ici clair) */
+/* VARIABLE MODO CLARO */
 :root {
   color-scheme: light;
   --header: url('https://images2.imgbox.com/e5/fb/TTqPoDcu_o.png');
@@ -38,7 +38,7 @@
   --font: "Open Sans";
 }
 
-/* VARIABLES DU MODE INVERSE (ici sombre) */
+/* VARIABLES MODO OSCURO */
 [data-color-scheme="dark"] {
   color-scheme: dark;
   --header: url('https://images2.imgbox.com/89/30/IXFzrs0y_o.png');
