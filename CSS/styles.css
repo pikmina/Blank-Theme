@@ -6,31 +6,53 @@
  *** Tutoriel pour utiliser les variables
  *** https://blankthemerpg.forumactif.com/t139-utiliser-les-variables-css ***/
 
-
-
-
-/* VARIABLE MODO CLARO */
+ @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+  @import url("https://use.typekit.net/fja6sab.css");
+ 
 :root {
   color-scheme: light;
   --header: url('https://images2.imgbox.com/e5/fb/TTqPoDcu_o.png');
 
-  --neutral: #fafbfc;
-  --neutralDark: #f2f4f9;
-  --neutralDarker: #dce3f4;
+  /* ======================
+     Fondos (Light Theme)
+     ====================== */
 
-  --contrast: #171938;
-  --contrastLight: #232657;
-  --contrastLighter: #c3c8f3;
+  --neutral: #F2EAD9;        /* Fondo principal (pergamino) */
+  --neutralDark: #E6DDC8;    /* Fondo secundario */
+  --neutralDarker: #CBBE9D;  /* Separadores */
 
-  --accentClr: #4b57c5;
-  --accentClrDark: #333c92;
+  /* ======================
+     Contrastes
+     ====================== */
 
-  --textColor: #232657;
-  --textColorAccent: #000;
+  --contrast: #121818;       
+  --contrastLight: #2B3F36;
+  --contrastLighter: #5A6F66;
 
-  --border: 1px solid #e5e5e5;
+  /* ======================
+     Acentos
+     ====================== */
 
-  --shadowBox: 0 0 20px #23265730;
+  --accentClr: #C9A24D;      
+  --accentClrDark: #A8873A;
+
+  /* ======================
+     Texto
+     ====================== */
+
+  --textColor: #121818;
+  --textColorAccent: #1F3A40;
+
+  /* ======================
+     Bordes y sombras
+     ====================== */
+
+  --border: 1px solid #CBBE9D;
+  --shadowBox: 0 0 20px #1F3A4025;
+
+  /* ======================
+     Tipografía
+     ====================== */
 
   --little-size: 12px;
   --normal-size: 14px;
@@ -38,33 +60,63 @@
   --large-size: 18px;
   --title-size: 22px;
 
-  --font: "Open Sans";
+  --font: "Crimson Text", serif;
+  --fontDisplay: "Louvette Display", serif;
+
+  /* ======================
+     Fondo decorativo
+     ====================== */
+
   --background: url('https://pikmina.github.io/Blank-Theme/imgs/back.jpg');
 }
 
-/* VARIABLES MODO OSCURO */
+
+/* ============================================================
+   DARK THEME
+   ============================================================ */
+
 [data-color-scheme="dark"] {
   color-scheme: dark;
   --header: url('https://images2.imgbox.com/89/30/IXFzrs0y_o.png');
 
-  --neutral: #1e212a;
-  --neutralDark: #181a21;
-  --neutralDarker: #313543;
+  /* ======================
+     Fondos (Dark Theme)
+     ====================== */
 
-  --contrast: #e5e5f0;
-  --contrastLight: #f4f4f4;
-  --contrastLighter: #40485e;
+  --neutral: #121818;        
+  --neutralDark: #1F3A40;   
+  --neutralDarker: #2B3F36; 
 
-  --accentClr: #7583ff;
-  --accentClrDark: #333c92;
+  /* ======================
+     Contrastes
+     ====================== */
 
-  --textColor: #c7c5cd;
-  --textColorAccent: #e5e5f0;
+  --contrast: #F2EAD9;
+  --contrastLight: #D3CBB8;
+  --contrastLighter: #9FAE9F;
 
-  --border: 1px solid #2b2e3b;
+  /* ======================
+     Acentos
+     ====================== */
 
-  --shadowBox: 0 0 20px var(--neutralDark);
+  --accentClr: #C9A24D;
+  --accentClrDark: #E2C36A;
+
+  /* ======================
+     Texto
+     ====================== */
+
+  --textColor: #F2EAD9;
+  --textColorAccent: #E2C36A;
+
+  /* ======================
+     Bordes y sombras
+     ====================== */
+
+  --border: 1px solid #2E4F54;
+  --shadowBox: 0 0 20px #00000060;
 }
+
 
 /* S'applique à TOUS les éléments du forum*/
 * {
@@ -80,8 +132,7 @@
 
 /* FOND DU FORUM ---*/
 body {
-  background: var(--neutralDark);
-  background-image: var(--background);
+  background: var(--neutralDark) var(--background) 100% / cover fixed no-repeat;
   font-family: var(--font);
   font-size: var(--normal-size);
   color: var(--textColor);
@@ -104,7 +155,6 @@ body {
   /*largeur forum*/
   margin: 20px auto;
   padding: 20px;
-  background: var(--neutral);
   border-radius: 5px;
 }
 
