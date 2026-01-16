@@ -6,68 +6,36 @@
  *** Tutoriel pour utiliser les variables
  *** https://blankthemerpg.forumactif.com/t139-utiliser-les-variables-css ***/
 
- @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
-  @import url("https://use.typekit.net/fja6sab.css");
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url("https://use.typekit.net/fja6sab.css");
  
 :root {
   color-scheme: light;
   --header: url('https://images2.imgbox.com/e5/fb/TTqPoDcu_o.png');
-
-  /* ======================
-     Fondos (Light Theme)
-     ====================== */
-
-  --neutral: #F2EAD9;        /* Fondo principal (pergamino) */
-  --neutralDark: #E6DDC8;    /* Fondo secundario */
-  --neutralDarker: #CBBE9D;  /* Separadores */
-
-  /* ======================
-     Contrastes
-     ====================== */
-
-  --contrast: #121818;       
-  --contrastLight: #2B3F36;
-  --contrastLighter: #5A6F66;
-
-  /* ======================
-     Acentos
-     ====================== */
-
-  --accentClr: #C9A24D;      
+  --neutral: #efefef;
+  --neutralDark: #d5d5d5;
+  --neutralDarker: #c3c3c3;
+  --transparentAlt: #1f3a4095;
+  --contrast: #121818;
+  --contrastLight: #73a4af;
+  --contrastLighter: #4caf9f8c;
+  --accentClr: #C9A24D;
   --accentClrDark: #A8873A;
-
-  /* ======================
-     Texto
-     ====================== */
-
   --textColor: #121818;
+  --textColorAlt: #f2f2f2;
   --textColorAccent: #1F3A40;
-
-  /* ======================
-     Bordes y sombras
-     ====================== */
-
-  --border: 1px solid #CBBE9D;
+  --border: 1px solid #cbcbcb;
   --shadowBox: 0 0 20px #1F3A4025;
-
-  /* ======================
-     Tipografía
-     ====================== */
-
+  --mini-size: 10px;
   --little-size: 12px;
   --normal-size: 14px;
   --medium-size: 16px;
   --large-size: 18px;
   --title-size: 22px;
-
-  --font: "Crimson Text", serif;
+  --fontSerif: "Crimson Text", serif;
   --fontDisplay: "Louvette Display", serif;
-
-  /* ======================
-     Fondo decorativo
-     ====================== */
-
-  --background: url('https://pikmina.github.io/Blank-Theme/imgs/star-bg.jpg');
+  --fontSans: "Verdana", sans-serif;
+  --background: url('https://2img.net/i.imgur.com/8VacgUI.jpg');
 }
 
 
@@ -79,39 +47,19 @@
   color-scheme: dark;
   --header: url('https://images2.imgbox.com/89/30/IXFzrs0y_o.png');
 
-  /* ======================
-     Fondos (Dark Theme)
-     ====================== */
-
   --neutral: #121818;        
   --neutralDark: #1F3A40;   
   --neutralDarker: #2B3F36; 
-
-  /* ======================
-     Contrastes
-     ====================== */
 
   --contrast: #F2EAD9;
   --contrastLight: #D3CBB8;
   --contrastLighter: #9FAE9F;
 
-  /* ======================
-     Acentos
-     ====================== */
-
   --accentClr: #C9A24D;
   --accentClrDark: #E2C36A;
 
-  /* ======================
-     Texto
-     ====================== */
-
   --textColor: #F2EAD9;
   --textColorAccent: #E2C36A;
-
-  /* ======================
-     Bordes y sombras
-     ====================== */
 
   --border: 1px solid #2E4F54;
   --shadowBox: 0 0 20px #00000060;
@@ -132,11 +80,12 @@
 
 /* FOND DU FORUM ---*/
 body {
-  background: var(--neutralDark) var(--background) 100% / cover fixed no-repeat;
-  font-family: var(--font);
+  background: var(--contrastLight) var(--background) 100% / cover fixed no-repeat;
+  font-family: var(--fontSans);
   font-size: var(--normal-size);
   color: var(--textColor);
   margin: 0 !important;
+  background-blend-mode: hard-light;
 }
 
 /* SCROLLBAR --- */
@@ -151,23 +100,61 @@ body {
 
 /* STRUCTURE PRINCIPALE ---*/
 .main_forum {
-  width: 940px;
+  width: 1170px;
   /*largeur forum*/
   margin: 20px auto;
   padding: 20px;
   border-radius: 5px;
 }
 
+div#page-header {
+display: flex;
+    height: 100vh;
+    width: 100%;
+    background: var(--contrastLighter);
+    text-align: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.header-intro {
+    border: 1px solid var(--contrastLight);
+    width: 90%;
+    height: 85vh;
+    margin: 30px 10px 20px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    corner-shape: scoop;
+    border-radius: 90px;
+}
+
+.forum-title {
+    font-family: var(--fontDisplay);
+    /*font-family: hwt-arabesque, sans-serif;*/
+    font-size: 100px;
+    color: var(--textColorAlt);
+    text-transform: uppercase;
+}
+
+.forum-desc {
+    border-top: 1px solid var(--contrastLight);
+    padding: 30px 10px;
+    color: var(--textColorAlt);
+    text-transform: uppercase;
+    font-size: var(--mini-size);
+    letter-spacing: 2px;
+    width: 60%;
+}
+
 /* BANNIERE ---*/
 /* Mettre la bannière en fond permet de la changer selon le thème clair ou sombre */
 #header {
-  background-image: var(--header);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: auto;
-  width: 900px;
-  height: 330px;
-  display: block;
+  display: none;
 }
 
 /* Conteneur de toutes les sous-sections
@@ -288,7 +275,6 @@ h1.page-title {
   color: var(--contrastLight);
   margin: 10px 0 20px;
   font-size: var(--title-size);
-  font-weight: 700;
   text-transform: uppercase;
   text-align: center;
 }
@@ -298,7 +284,6 @@ h2,
 .h2 {
   margin: 0;
   font-size: var(--large-size);
-  font-weight: 700;
 }
 
 /* Utilisé pour des titres de sous-sections, petit encadré, ...*/
@@ -540,7 +525,6 @@ summary {
  * Contient des boutons ou des liens spéciaux */
 .links_bar {
   padding: 10px;
-  border: var(--border);
   border-radius: 5px;
   margin: 25px 0;
   clear: both;
@@ -585,7 +569,7 @@ a.specials_links:empty {
   gap: 10px;
   padding: 5px 10px;
   position: fixed;
-  z-index: 99;
+  z-index: 99999;
   top: 10px;
   right: 10px;
   height: 35px;
@@ -1104,32 +1088,86 @@ a.specials_links:empty {
 
 /*** ------------------------------- ***/
 /*** BARRE DE NAVIGATION ----------- ***/
-
+.navi{display: none;}
 /* Conteneur de la barre de nav */
 .navbar {
-  background: var(--neutralDark);
-  border-radius: 5px;
-  margin-top: 10px;
-  padding: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 50px;
+    font-size: var(--mini-size);
+    text-transform: uppercase;
+}
 
-  display: flex;
-  /* permet de mettre les liens sur une ligne */
-  align-items: center;
-  /*centre verticalement*/
-  justify-content: center;
-  /*centre horizontalement*/
+.navbar.is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--contrast);
+}
+
+.navbar.interior{
+    margin: auto;
+    text-align: left;
+}
+
+.navbar a,
+.navbar .dropdown-btn {
+    color: var(--textColorAlt);
+    padding: 24px 20px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    position: relative;
+}
+
+.navbar a:hover,
+.navbar.dropdown:hover .dropdown-btn {
+    background-color: var(--contrastLight);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--contrast);
+    min-width: 220px;
+    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-content a {
+    color: var(--textColorAlt);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--contrastLight);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+hr.divider {
+    border-top: 1px solid var(--transparentAlt);
 }
 
 /* Suppression des liens peu utilisés*/
 .navbar a[href^="/faq"],
-/*faq*/
 .navbar a[href^="/calendar"],
-/*calendrier*/
 .navbar a[href^="/groups"],
-/*groupes*/
 .navbar a[href^="/images"]
-
-/*Dernières images*/
   {
   display: none;
 }
@@ -1171,28 +1209,44 @@ a.mainmenu img {
 /*** CATEGORIES -------------------- ***/
 
 .category {
-  background: var(--neutralDark);
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 25px;
+}
+
+.cate_title {
+    text-align: center;
+    margin: 50px;
 }
 
 /* Titre d'une catégorie */
 .cate_title h2 {
-  display: block;
+  display: inline;
   text-align: center;
   text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: var(--mini-size);
+  font-weight: normal;
   margin: 10px 0 20px;
+  padding: 20px;
+  background: var(--transparentAlt);
+  font-family: var(--fontText);
+  color: var(--textColorAlt);
+  opacity: .6;
+  letter-spacing: 2px;
 }
 
 /* conteneur d'un forum*/
 .forum {
   margin-bottom: 10px;
+  padding: 0;
   background: var(--neutral);
-  padding: 10px;
-  border-radius: 5px;
+  width: 45%;
+}
+
+.forums {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .forum:last-child {
@@ -1202,6 +1256,9 @@ a.mainmenu img {
 /* titre d'un forum */
 a.forumtitle {
   font-size: var(--large-size);
+  display: block;
+  background: var(--contrast);
+  padding: 30px 10px;
 }
 
 .forum_content {
