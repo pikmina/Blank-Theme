@@ -31,11 +31,14 @@
   --normal-size: 14px;
   --medium-size: 16px;
   --large-size: 18px;
+  --huge-size: 20px;
   --title-size: 22px;
   --fontSerif: "Crimson Text", serif;
   --fontDisplay: "Louvette Display", serif;
   --fontSans: "Verdana", sans-serif;
   --background: url('https://2img.net/i.imgur.com/8VacgUI.jpg');
+  --pattern: url('https://i.ibb.co/YB9TQ0ys/pattern.jpg');
+  --flower: url('https://i.ibb.co/mrx5Wtmr/flower-white.png');
 }
 
 
@@ -46,21 +49,16 @@
 [data-color-scheme="dark"] {
   color-scheme: dark;
   --header: url('https://images2.imgbox.com/89/30/IXFzrs0y_o.png');
-
   --neutral: #121818;        
   --neutralDark: #1F3A40;   
   --neutralDarker: #2B3F36; 
-
   --contrast: #F2EAD9;
   --contrastLight: #D3CBB8;
   --contrastLighter: #9FAE9F;
-
   --accentClr: #C9A24D;
   --accentClrDark: #E2C36A;
-
   --textColor: #F2EAD9;
   --textColorAccent: #E2C36A;
-
   --border: 1px solid #2E4F54;
   --shadowBox: 0 0 20px #00000060;
 }
@@ -80,7 +78,7 @@
 
 /* FOND DU FORUM ---*/
 body {
-  background: var(--contrastLight) var(--background) 100% / cover fixed no-repeat;
+  background: var(--contrast) 100% / cover fixed no-repeat;
   font-family: var(--fontSans);
   font-size: var(--normal-size);
   color: var(--textColor);
@@ -111,13 +109,14 @@ div#page-header {
 display: flex;
     height: 100vh;
     width: 100%;
-    background: var(--contrastLighter);
+    background: var(--contrastLighter) var(--background) center / cover no-repeat fixed;
     text-align: center;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    background-blend-mode: color-dodge ;
 }
 
 .header-intro {
@@ -1249,6 +1248,9 @@ a.mainmenu img {
     flex-wrap: wrap;
 }
 
+#c3 .forums .forum {
+    width: 100%;
+}
 .forum:last-child {
   margin-bottom: 0;
 }
@@ -1256,9 +1258,19 @@ a.mainmenu img {
 /* titre d'un forum */
 a.forumtitle {
   font-size: var(--large-size);
-  display: block;
-  background: var(--contrast);
-  padding: 30px 10px;
+  display: flex;
+  background: var(--pattern);
+  padding: 50px 50px;
+  color: var(--textColorAlt);
+  font-family: var(--fontDisplay);
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: lighter;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .forum_content {
@@ -1287,14 +1299,23 @@ a.forumtitle {
 .forum_avatar {
   width: 60px;
   height: 60px;
+  /* border: 10px solid var(--transparentAlt); */
+  ):
+  content-box;
+  box-sizing: content-box;
 }
 
 .forum_avatar img {
-  background: var(--neutralDark);
+  /* background: var(--transparentAlt); */
   width: 60px;
   height: 60px;
   object-fit: cover;
   object-position: center;
+  border: 1px solid var(--contrast);
+  padding: 10px;
+  box-sizing: content-box;
+  corner-shape: scoop;
+  border-radius: 10px;
 }
 
 /* dernier message*/
